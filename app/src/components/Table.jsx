@@ -1,8 +1,6 @@
 import './App.css'
-import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
-
   return (
     <>
       <div>
@@ -21,6 +19,7 @@ function App() {
             </tr>
           </thead>
           <tbody>
+
             <tr>
               <td>ido</td>
               <td>peli</td>

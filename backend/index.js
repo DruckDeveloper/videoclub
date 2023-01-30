@@ -7,7 +7,6 @@ const PORT = 3030;
 const app = express();
 
 const videoRoutes = require("./routes/videoRoutes");
-//const indexRoute = require("./routes/indexRoute");
 const connectionOptions = { useUnifiedTopology: true, useNewUrlParser: true };
 
 app.use(express.json());
@@ -21,7 +20,6 @@ mongoose.connect(`mongodb+srv://${dbuser}:${dbpass}@videoclub.n2m4frn.mongodb.ne
     .catch((err) => console.error(err));
 
 app.use("/video", videoRoutes);
-//app.use("/", indexRoute);
 
 app.listen(PORT, () => {
     console.log("The server is listening on port " + PORT);

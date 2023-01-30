@@ -7,14 +7,15 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "i:frontend": "cd app && npm install",
     "i:backend": "cd backend && npm install",
-    "iall": "npm run i:frontend && npm run i:backend", 
-    "start:front": "cd app && npm run dev",    
+    "iall": "npm run i:frontend && npm run i:backend",
+    "start:front": "cd app && npm run dev",
     "start:back": "cd backend && node index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bootstrap": "^5.2.3",
     "dotenv": "^16.0.3"
   }
 }

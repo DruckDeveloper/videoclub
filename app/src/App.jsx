@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./App.css"
-import movie from "./apis";
+import movies from "./apis";
 
 function App() {
 
   const [video, setVideo] = useState([]);
 
   async function fetchData() {
-    const { data } = await movie.get("/movie");
+    const { data } = await movies.get("/movies");
     setVideo([data]);
   }
 
@@ -16,7 +16,7 @@ function App() {
   }, []);
 
   return (
-    <div>ddd</div>
+    <div>{video}</div>
   )
 }
 

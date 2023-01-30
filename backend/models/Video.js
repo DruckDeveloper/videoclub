@@ -9,4 +9,4 @@ const VideoSchema = new mongoose.Schema({
     rel_county: String
 });
 
-module.exports = mongoose.model("movie", VideoSchema);
+module.exports = mongoose.model("movies", VideoSchema);

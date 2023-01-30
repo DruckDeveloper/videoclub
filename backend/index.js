@@ -20,7 +20,7 @@ mongoose.connect(`mongodb+srv://${dbuser}:${dbpass}@videoclub.n2m4frn.mongodb.ne
     .then(() => console.log("Connected successfully, with Atlass"))
     .catch((err) => console.error(err));
 
-app.use("/movie", videoRoutes);
+app.use("/movies", videoRoutes);
 //app.use("/", indexRoute);
 
 app.listen(PORT, () => {

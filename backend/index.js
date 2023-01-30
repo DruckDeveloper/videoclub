@@ -1,25 +1,31 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+/* import * as dotenv from 'dotenv'
+dotenv.config() */
+require("dotenv").config({ path: "../.env" });
 
 const PORT = 3030;
 const app = express();
 
-const todoRoutes = require("./routes/todoRoutes");
+const videoRoutes = require("./routes/videoRoutes");
+//const indexRoute = require("./routes/indexRoute");
 const connectionOptions = { useUnifiedTopology: true, useNewUrlParser: true };
 
 app.use(express.json());
 app.use(cors());
 
-/* const dbuser=process.env.DB_USER;
-const dbpass=process.env.DB_PASS; */
-
-
-mongoose.connect(`mongodb+srv://appuser:Movie4527Project02@videoclub.n2m4frn.mongodb.net/test`, connectionOptions)
+const dbuser = process.env.VITE_USER;
+const dbpass = process.env.VITE_PASS;
+//appuser:Movie4527Project02
+//${dbuser}:${dbpass}
+//${config.VITE_USER}:${config.VITE_PASSWORD}
+mongoose.connect(`mongodb+srv://${dbuser}:${dbpass}@videoclub.n2m4frn.mongodb.net/movie`, connectionOptions)
     .then(() => console.log("Connected successfully, with Atlass"))
     .catch((err) => console.error(err));
 
-app.use("/todos", todoRoutes);
+app.use("/video", videoRoutes);
+//app.use("/", indexRoute);
 
 app.listen(PORT, () => {
     console.log("The server is listening on port " + PORT);

@@ -1,8 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-/* import * as dotenv from 'dotenv'
-dotenv.config() */
 require("dotenv").config({ path: "../.env" });
 
 const PORT = 3030;
@@ -17,9 +15,7 @@ app.use(cors());
 
 const dbuser = process.env.VITE_USER;
 const dbpass = process.env.VITE_PASS;
-//appuser:Movie4527Project02
-//${dbuser}:${dbpass}
-//${config.VITE_USER}:${config.VITE_PASSWORD}
+
 mongoose.connect(`mongodb+srv://${dbuser}:${dbpass}@videoclub.n2m4frn.mongodb.net/movie`, connectionOptions)
     .then(() => console.log("Connected successfully, with Atlass"))
     .catch((err) => console.error(err));

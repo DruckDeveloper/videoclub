@@ -1,6 +1,5 @@
-import './App.css'
 
-function App() {
+function Table() {
   return (
     <>
       <div>
@@ -40,4 +39,4 @@ function App() {
   )
 }
 
-export default App
+export default Table

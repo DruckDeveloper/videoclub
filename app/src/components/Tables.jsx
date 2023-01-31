@@ -1,8 +1,6 @@
 import Table from 'react-bootstrap/Table';
-import { Tbody } from "./Tbody";
-import '../App.css'
-
-const Tables = ({data}) => {
+import { Tbody } from "./Tbody"
+const Tables = ({data,erase}) => {
 
   return (
     <>
@@ -21,7 +19,7 @@ const Tables = ({data}) => {
           </thead>
           <tbody>
               {data.map( (item)  => 
-              <Tbody data={item}/> )}
+              <Tbody data={item} erase={erase}/> )}
           </tbody>
         </Table>
     </>

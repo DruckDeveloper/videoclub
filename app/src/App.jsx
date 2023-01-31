@@ -17,25 +17,26 @@ function App() {
         const {data} = await movies.get("/movies");
         setMoviesList(data);
       } 
-  fetchData(); }); 
+  fetchData(); },[]); 
 
   const addMovie = async (item) => {
     const { data } = await movies.post("/movies", item);
     setMoviesList((oldList) => [...oldList, data]);
   };
 
+  const editMovie = async (id, item) => {
+    await movies.put(`/movies/${id}`, item);
+
+  };
   const removeMovie = async (id) => {
     await movies.delete(`/movies/${id}`);
     setMoviesList((oldList) => oldList.filter((item) => item._id !== id));
-  };
-  const editMovie = async (id, item) => {
-    await movies.put(`/movies/${id}`, item);
   };
 
   return (
     <>
     <NavBar/>
-    <Tables data={moviesList}/>
+    <Tables data={moviesList} erase={removeMovie}/>
     <Footer/>
     </>
   )

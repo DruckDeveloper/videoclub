@@ -1,6 +1,7 @@
 header {
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-between;
   width: 100vw !important;
   padding: 0;
@@ -15,6 +16,7 @@ header {
 .addBtn{
   display: flex;
   justify-content: center;
+  align-items: center;
   background-color: transparent;
   border: none;
   width: 100%;

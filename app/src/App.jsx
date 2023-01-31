@@ -16,7 +16,7 @@ function App() {
         const {data} = await movies.get("/movies");
         setMoviesList(data);
       } 
-  fetchData(); }); 
+  fetchData();}, []); 
 
   const addMovie = async (item) => {
     const { data } = await movies.post("/movies", item);
@@ -36,6 +36,7 @@ function App() {
     <>
       <Tables
         data={moviesList}
+        erase = {removeMovie}
       />
     </>
   )

@@ -5,7 +5,7 @@ import AddMovie from "./AddMovie";
 import { IoIosAddCircle } from "react-icons/io";
 import '../styles/NavBar.css'
 
-function ModalAddMovie() {
+function ModalAddMovie({add}) {
   const values = [true];
   const [fullscreen, setFullscreen] = useState(true);
   const [show, setShow] = useState(false);
@@ -32,7 +32,10 @@ function ModalAddMovie() {
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary">Cerrar</Button>
-          <Button variant="primary">Guardar</Button>
+          <Button variant="primary" onClick={()=>{
+            add();
+          }}
+           >Guardar</Button>
         </Modal.Footer>
       </Modal>
     </div>

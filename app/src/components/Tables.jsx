@@ -1,7 +1,7 @@
 import Table from 'react-bootstrap/Table';
 import { Tbody } from "./Tbody"
-const Tables = ({data,erase}) => {
 
+const Tables = ({data,erase}) => {
   return (
     <>
         <Table striped bordered hover size="sm">

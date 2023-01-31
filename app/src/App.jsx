@@ -3,12 +3,13 @@ import movies from "./apis";
 import "./App.css"
 import "bootstrap/dist/css/bootstrap.min.css";
 // Componets
+import NavBar from "./components/NavBar";
 import Tables from './components/Tables';
+import Footer from "./components/Footer";
+
 
 
 function App() {
-
-
   const [moviesList, setMoviesList] = useState([]);
 
   useEffect(() => { 
@@ -27,16 +28,15 @@ function App() {
     await movies.delete(`/movies/${id}`);
     setMoviesList((oldList) => oldList.filter((item) => item._id !== id));
   };
-
   const editMovie = async (id, item) => {
     await movies.put(`/movies/${id}`, item);
   };
 
   return (
     <>
-      <Tables
-        data={moviesList}
-      />
+    <NavBar/>
+    <Tables data={moviesList}/>
+    <Footer/>
     </>
   )
 }

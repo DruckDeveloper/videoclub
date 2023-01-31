@@ -1,0 +1,24 @@
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100vw !important;
+  padding: 0;
+  background: #000;
+}
+.logo {
+  display: flex;
+  justify-content: flex-start;
+  width: 15em;
+  padding-left: 10px;
+}
+.addBtn{
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  width: 100%;
+}
+.icon{
+  width: 100%;
+}

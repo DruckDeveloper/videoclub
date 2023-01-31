@@ -1,12 +1,12 @@
-import './Footer.css'
+import "../styles/Footer.css";
 
-function Footer(){
-return (
+function Footer() {
+  return (
     <>
-        <footer>
-            <p>movies extra movie ordinario © 2023 | Creado por ...</p>
-        </footer>
+      <footer>
+        <p>Movies Extra Movie Ordinario © 2023 | Creado por ...</p>
+      </footer>
     </>
-)
+  );
 }
-export default Footer
+export default Footer;

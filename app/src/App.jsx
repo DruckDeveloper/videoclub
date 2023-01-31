@@ -1,17 +1,23 @@
-//Styles
-import './App.css'
+import React, { useState, useEffect } from "react";
+import movies from "./apis";
+import "./App.css"
 import "bootstrap/dist/css/bootstrap.min.css";
 // Componets
-import Table from './components/Table';
-import NavBar from './components/NavBar';
-import Footer from './components/Footer';
+import NavBar from "./components/NavBar";
+import Tables from './components/Tables';
+import Footer from "./components/Footer";
+
+
+
 function App() {
-/*   const [moviesList, setMoviesList] = useState([]);
+  const [moviesList, setMoviesList] = useState([]);
 
   useEffect(() => { 
     async function fetchData() { 
-        await movies.get("/movies");} 
-  fetchData(); }); 
+        const {data} = await movies.get("/movies");
+        setMoviesList(data);
+      } 
+  fetchData(); },[]); 
 
   const addMovie = async (item) => {
     const { data } = await movies.post("/movies", item);
@@ -25,12 +31,15 @@ function App() {
 
   const editMovie = async (id, item) => {
     await movies.put(`/movies/${id}`, item);
-  }; */
+  };
   return (
     <>
       <NavBar/>
       <Table/>
       <Footer/>
+    <NavBar add={addMovie}/>
+    <Tables data={moviesList} erase={removeMovie}/>
+    <Footer/>
     </>
   )
 }

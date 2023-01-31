@@ -1,5 +1,11 @@
 
-function Table() {
+
+
+
+const Table = (data, addFunction, removeFunction, removeFunction, editMovie) => {
+
+  
+
   return (
     <>
       <div>

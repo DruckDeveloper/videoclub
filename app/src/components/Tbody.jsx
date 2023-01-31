@@ -1,6 +1,6 @@
 
+export const Tbody = ({data,erase}) => {
 
-export const Tbody = ({data, erase}) => {
   return (
     <>
       <tr>
@@ -12,8 +12,8 @@ export const Tbody = ({data, erase}) => {
         <td>{data.rel}</td>
         <td>{data.rel_country}</td>
         <td>
-          <a href="/edit">editar</a>
-          <button href="/delete" onClick={()=>{erase(data._id)}}>borrar</button>
+          <a href="/edit" >editar</a>
+          <button onClick={()=>{erase(data._id)}} >borrar</button>
         </td>
       </tr>
     </>

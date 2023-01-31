@@ -1,8 +1,4 @@
-
-
-
-
-const Table = (data, addFunction, removeFunction, removeFunction, editMovie) => {
+const Table = (data, addFunction, removeFunction, editMovie) => {
 
   
 
@@ -10,7 +6,7 @@ const Table = (data, addFunction, removeFunction, removeFunction, editMovie) => 
     <>
       <div>
         <a href="/create">nuevo</a>
-        <table className='table table-bordered table-triped text-center mt-4'>
+        <table className='table table-bordered table-triped text-center  mt-4'>
           <thead className='bg'>
             <tr className='bg-warning'>
               <th>id</th>

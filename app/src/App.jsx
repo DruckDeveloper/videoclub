@@ -3,9 +3,10 @@ import './App.css'
 import "bootstrap/dist/css/bootstrap.min.css";
 // Componets
 import Table from './components/Table';
-
+import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 function App() {
-  const [moviesList, setMoviesList] = useState([]);
+/*   const [moviesList, setMoviesList] = useState([]);
 
   useEffect(() => { 
     async function fetchData() { 
@@ -24,15 +25,12 @@ function App() {
 
   const editMovie = async (id, item) => {
     await movies.put(`/movies/${id}`, item);
-  };
+  }; */
   return (
     <>
-      <Table
-        editMovie={editMovie}
-        removeFunction={removeMovie}
-        addFunction={addMovie}
-        data={moviesList}
-      />
+      <NavBar/>
+      <Table/>
+      <Footer/>
     </>
   )
 }

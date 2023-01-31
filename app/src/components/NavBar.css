@@ -1,0 +1,14 @@
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw !important;
+    padding: 10px 0px;
+    background: #000;
+}
+.lol{
+    display: flex;
+    justify-content: flex-start;
+    width: 15em;
+    padding-left: 10px;
+}

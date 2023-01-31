@@ -19,7 +19,7 @@ mongoose.connect(`mongodb+srv://${dbuser}:${dbpass}@videoclub.n2m4frn.mongodb.ne
     .then(() => console.log("Connected successfully, with Atlass"))
     .catch((err) => console.error(err));
 
-app.use("/video", videoRoutes);
+app.use("/movies", videoRoutes);
 
 app.listen(PORT, () => {
     console.log("The server is listening on port " + PORT);

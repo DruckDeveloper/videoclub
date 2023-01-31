@@ -1,29 +1,21 @@
 import React, { useState, useEffect } from "react";
+import movies from "./apis";
 import "./App.css"
 import "bootstrap/dist/css/bootstrap.min.css";
 // Componets
-import Table from './components/Table';
+import Tables from './components/Tables';
 
-import movies from "./apis";
 
 function App() {
 
-  const [video, setVideo] = useState([]);
-
-  async function fetchData() {
-    const { data } = await movies.get("/movies");
-    setVideo([data]);
-  }
-
-  useEffect(() => {
-    fetchData();
-  }, []);
 
   const [moviesList, setMoviesList] = useState([]);
 
   useEffect(() => { 
     async function fetchData() { 
-        await movies.get("/movies");} 
+        const {data} = await movies.get("/movies");
+        setMoviesList(data);
+      } 
   fetchData(); }); 
 
   const addMovie = async (item) => {
@@ -42,10 +34,7 @@ function App() {
 
   return (
     <>
-      <Table
-        editMovie={editMovie}
-        removeFunction={removeMovie}
-        addFunction={addMovie}
+      <Tables
         data={moviesList}
       />
     </>

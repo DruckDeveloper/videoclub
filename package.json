@@ -13,10 +13,6 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "bootstrap": "^5.2.3",
-    "dotenv": "^16.0.3",
-    "react-icons": "^4.7.1"
-  }
+  "license": "ISC"
+  
 }

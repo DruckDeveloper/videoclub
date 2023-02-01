@@ -36,7 +36,7 @@ function App() {
   return (
     <>
     <NavBar add={addMovie}/>
-    <Tables data={moviesList} erase={removeMovie}/>
+    <Tables data={moviesList} erase={removeMovie} edit={editMovie}/>
     <Footer/>
     </>
   )

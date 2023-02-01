@@ -1,7 +1,7 @@
 import Table from 'react-bootstrap/Table';
 import { Tbody } from "./Tbody"
 
-const Tables = ({data,erase}) => {
+const Tables = ({data,erase, edit}) => {
   return (
     <>
         <Table striped bordered hover size="sm">
@@ -19,7 +19,7 @@ const Tables = ({data,erase}) => {
           </thead>
           <tbody>
               {data.map( (item)  => 
-              <Tbody data={item} erase={erase}/> )}
+              <Tbody data={item} key={item._id} erase={erase} edit={edit}/>)}
           </tbody>
         </Table>
     </>

@@ -6,7 +6,7 @@ const VideoSchema = new mongoose.Schema({
     time: Number,
     lang: String,
     rel: String,
-    rel_county: String
+    rel_country: String
 });
 
 module.exports = mongoose.model("movies", VideoSchema);

@@ -2,18 +2,18 @@ import { useState } from "react";
 import moment from 'moment'
 
 export const Tbody = ({ data, erase, edit }) => {
-  //State allow row editing
+  // State allow row editing
   const [editing, setEditing] = useState(false);
-  //States for item model 
+  // States for item model 
   const [title, setTitle] = useState(data.title);
   const [year, setYear] = useState(data.year);
   const [time, setTime] = useState(data.time);
   const [lang, setLang] = useState(data.lang);
-  //Reverse Date 
+  // Reverse Date 
   const [rel, setRel] = useState(data.rel);
   const [rel_country, setRel_country] = useState(data.rel_country);
 
-//Item model 
+// Item model 
 const editItem ={
     title: title,
     year: year,
@@ -23,7 +23,7 @@ const editItem ={
     rel_country: rel_country
   };  
 
-  //IF editing is true enable input rows
+  // IF editing is true enable input rows
   if (editing) {
     return (
       <tr>
@@ -33,8 +33,9 @@ const editItem ={
           />
         </td>
         <td>
-          <input type="text" name="title"          
+          <input type="text" name="title"
           value={title}
+          // Create new title state with selected title 
           onChange={(e) => {setTitle(e.target.value)}}
           placeholder={data.title}
           />
@@ -42,6 +43,7 @@ const editItem ={
         <td>
           <input type="number" name="year"
           value={year}
+          // Create new year state with selected year
           onChange={(e) => {setYear(e.target.value)}}
           placeholder={data.year}
           />
@@ -76,6 +78,7 @@ const editItem ={
         </td>
         <td>
           <a href="">
+          {/* Save the edited fields and disable edit mode */}
             <button
               onClick={_ => {
                 edit(data._id, editItem)
@@ -86,6 +89,7 @@ const editItem ={
             Guardar
             </button>
           </a>
+          {/* Disable edit mode  */}
           <button
             onClick={_ => {
               setEditing(false);
@@ -97,7 +101,8 @@ const editItem ={
       </tr>
     );
   }
-
+  
+  // If is not editing only return the row info  
   return (
     <>
       <tr>
@@ -109,6 +114,7 @@ const editItem ={
         <td>{moment.utc(data.rel).format('DD-MM-YYYY')}</td>
         <td>{data.rel_country}</td>
         <td>
+          {/* Allows edit functionality changing editing state*/}
           <button
             onClick={(_) => {
               setEditing(true);
@@ -116,6 +122,7 @@ const editItem ={
           >
             Editar
           </button>
+          {/* Remove row button */}
           <button
             onClick={() => {
               erase(data._id);

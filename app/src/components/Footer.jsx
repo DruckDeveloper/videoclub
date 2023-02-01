@@ -1,5 +1,6 @@
 import "../styles/Footer.css";
 
+//   Footer component
 function Footer() {
   return (
     <>

@@ -1,9 +1,13 @@
+//   Imports the main React component and hook
 import { useState } from "react";
+//   Imports form Bootstrap
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
+
 const AddMovie = ({add}) => {
 
+  //   States for item document
   const [title, setTitle] = useState('');
   const [year, setYear] = useState(0);
   const [time, setTime] = useState(0);
@@ -11,7 +15,7 @@ const AddMovie = ({add}) => {
   const [rel, setRel] = useState('');
   const [rel_country, setRel_country] = useState('');
 
-
+//   Item model 
 const addItem ={
     title: title,
     year: year,
@@ -20,9 +24,8 @@ const addItem ={
     rel: rel,
     rel_country: rel_country};
 
-    
+  //   Component return
   return (
-    
     <div id="Form">
       <Form>
         <Form.Group className="mb-2">
@@ -40,6 +43,7 @@ const addItem ={
           <Form.Control 
           type="number" 
           placeholder="Año" 
+          // Update year state with selected year  
           onChange={(e) => {setYear(e.target.value)}}
           value={year}
           />
@@ -68,7 +72,7 @@ const addItem ={
           value={rel_country} />
         </Form.Group>
       </Form>
-
+      {/* Button functionality assignment */}
       <button onClick={()=>{add(addItem)}}>GUARDAR</button>
       
     </div>

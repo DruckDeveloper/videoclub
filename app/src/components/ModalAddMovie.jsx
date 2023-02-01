@@ -5,15 +5,19 @@ import AddMovie from "./AddMovie";
 import { IoIosAddCircle } from "react-icons/io";
 import '../styles/NavBar.css'
 
+//  Modal component
 function ModalAddMovie({add}) {
+  //  State assignment
   const values = [true];
   const [fullscreen, setFullscreen] = useState(true);
   const [show, setShow] = useState(false);
 
+  // Show modal function
   function handleShow(breakpoint) {
     setFullscreen(breakpoint);
     setShow(true);
   }
+
   return (
     <div>
       {values.map((v, idx) => (

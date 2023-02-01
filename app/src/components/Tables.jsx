@@ -1,6 +1,8 @@
+// Import table components
 import Table from 'react-bootstrap/Table';
 import { Tbody } from "./Tbody"
 
+// Tables component
 const Tables = ({data,erase, edit}) => {
   return (
     <>
@@ -18,6 +20,7 @@ const Tables = ({data,erase, edit}) => {
             </tr>
           </thead>
           <tbody>
+              {/* Mapping table rows with data objects, delete and edit functionalities as a prop*/}
               {data.map( (item)  => 
               <Tbody data={item} key={item._id} erase={erase} edit={edit}/>)}
           </tbody>

@@ -8,6 +8,7 @@ const PORT = process.env.PORT || 3030;
 const app = express();
 
 const videoRoutes = require("./routes/videoRoutes");
+const indexRoute = require("./routes/indexRoute");
 //  URI options for mongodb connection
 const connectionOptions = { useUnifiedTopology: true, useNewUrlParser: true };
 
@@ -26,6 +27,7 @@ mongoose.connect(`mongodb+srv://${dbuser}:${dbpass}@videoclub.n2m4frn.mongodb.ne
 
 //  Assignment of any type of request to a specific route
 app.use("/movies", videoRoutes);
+app.use("/", indexRoute);
 
 //  Function that listens on the specified port
 app.listen(PORT, () => {

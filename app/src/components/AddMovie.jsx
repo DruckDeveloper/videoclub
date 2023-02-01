@@ -3,16 +3,26 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
 const AddMovie = ({add}) => {
-  const [formData, setFormData] = useState({
-    title: '',
-    year: null,
-    time: null,
-    lang: '',
-    rel: '',
-    rel_county: ''
-  });
 
+  const [title, setTitle] = useState('');
+  const [year, setYear] = useState(0);
+  const [time, setTime] = useState(0);
+  const [lang, setLang] = useState('');
+  const [rel, setRel] = useState('');
+  const [rel_county, setRel_county] = useState('');
+
+
+const addItem ={
+    title: title,
+    year: year,
+    time: time,
+    lang: lang,
+    rel: rel,
+    rel_county: rel_county};
+
+    
   return (
+    
     <div id="Form">
       <Form>
         <Form.Group className="mb-2">
@@ -21,29 +31,46 @@ const AddMovie = ({add}) => {
         <Form.Group className="mb-2">
           <Form.Control
             type="text"
-            onChange={(e) => {
-              setTitle(e.target.value);
-            }}
             placeholder="Nombre de la pelicula"
+            onChange={(e) => {setTitle(e.target.value)}}
+            value={title}
           />
         </Form.Group>
         <Form.Group className="mb-2">
-          <Form.Control type="number" placeholder="Año" />
+          <Form.Control 
+          type="number" 
+          placeholder="Año" 
+          onChange={(e) => {setYear(e.target.value)}}
+          value={year}
+          />
+          
         </Form.Group>
         <Form.Group className="mb-2">
-          <Form.Control type="number" placeholder="Duración" />
+          <Form.Control 
+          type="number" 
+          placeholder="Duración" 
+          onChange={(e) => {setTime(e.target.value)}}
+          value={time}/>
         </Form.Group>
         <Form.Group className="mb-2">
-          <Form.Control type="text" placeholder="Lenguaje" />
+          <Form.Control type="text" placeholder="Lenguaje"          
+          onChange={(e) => {setLang(e.target.value)}}
+          value={lang}/>
         </Form.Group>
         <Form.Group className="mb-2">
-          <Form.Control type="date" placeholder="Fecha de lanzamiento" />
+          <Form.Control type="date" placeholder="Fecha de lanzamiento"           
+          onChange={(e) => {setRel(e.target.value)}}
+          value={rel}/>
         </Form.Group>
         <Form.Group className="mb-2">
-          <Form.Control type="number" placeholder="País" />
+          <Form.Control type="text" placeholder="País"
+          onChange={(e) => {setRel_county(e.target.value)}}
+          value={rel_county} />
         </Form.Group>
       </Form>
-      <Button onClick={()=>{add(addItem)}}></Button>
+
+      <button onClick={()=>{add(addItem)}}>GUARDAR</button>
+      
     </div>
   );
 };

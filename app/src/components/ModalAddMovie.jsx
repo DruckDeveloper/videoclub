@@ -28,14 +28,9 @@ function ModalAddMovie({add}) {
           <Modal.Title>Agregar una pelicula</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <AddMovie />
+          <AddMovie add={add}/>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary">Cerrar</Button>
-          <Button variant="primary" onClick={()=>{
-            add();
-          }}
-           >Guardar</Button>
         </Modal.Footer>
       </Modal>
     </div>

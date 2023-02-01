@@ -19,7 +19,7 @@ const dbuser = process.env.VITE_USER;
 const dbpass = process.env.VITE_PASS;
 
 //  Connection to the database in mongoDB
-mongoose.connect(`mongodb+srv:// ${dbuser}:${dbpass}@videoclub.n2m4frn.mongodb.net/videoclub?retryWrites=true&w=majority`, connectionOptions)
+mongoose.connect(`mongodb+srv://${dbuser}:${dbpass}@videoclub.n2m4frn.mongodb.net/videoclub?retryWrites=true&w=majority`, connectionOptions)
     // Error handling with promises
     .then(() => console.log("Connected successfully, with Atlass"))
     .catch((err) => console.error(err));

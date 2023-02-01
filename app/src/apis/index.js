@@ -3,5 +3,5 @@ import axios from "axios";
 
 // Backend endpoint 
 export default axios.create({
-    baseURL: "http:// localhost:3030"
+    baseURL: "http://localhost:3030"
 });

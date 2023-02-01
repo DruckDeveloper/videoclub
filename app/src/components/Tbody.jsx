@@ -1,15 +1,15 @@
 import { useState } from "react";
-
+import moment from 'moment'
 
 export const Tbody = ({ data, erase, edit }) => {
   //State allow row editing
   const [editing, setEditing] = useState(false);
-
   //States for item model 
   const [title, setTitle] = useState(data.title);
   const [year, setYear] = useState(data.year);
   const [time, setTime] = useState(data.time);
   const [lang, setLang] = useState(data.lang);
+  //Reverse Date 
   const [rel, setRel] = useState(data.rel);
   const [rel_country, setRel_country] = useState(data.rel_country);
 
@@ -21,8 +21,7 @@ const editItem ={
     lang: lang,
     rel: rel,
     rel_country: rel_country
-  };
-
+  };  
 
   //IF editing is true enable input rows
   if (editing) {
@@ -30,7 +29,7 @@ const editItem ={
       <tr>
         <td>
           <input type="text" name="_id" 
-          placeholder={data._id}
+          value={data._id}
           />
         </td>
         <td>
@@ -65,9 +64,7 @@ const editItem ={
           <input type="date" name="rel"
           value={rel}
           onChange={(e) => {setRel(e.target.value)}}
-          placeholder={data.rel} 
-          // format="dd-mm-yyyy"
-          pattern="/^\d{2}\/\d{2}\/\d{4}$/"
+          placeholder={data.rel}   
           />
         </td>
         <td>
@@ -78,16 +75,19 @@ const editItem ={
           />
         </td>
         <td>
+          <a href="">
+            <button
+              onClick={_ => {
+                edit(data._id, editItem)
+                setEditing(false); 
+              }}
+            >
+            
+            Guardar
+            </button>
+          </a>
           <button
-            onClick={(_) => {
-              edit(data._id, editItem)
-              setEditing(false);
-            }}
-          >
-          Guardar
-          </button>
-          <button
-            onClick={(_) => {
+            onClick={_ => {
               setEditing(false);
             }}
           >
@@ -106,7 +106,7 @@ const editItem ={
         <td>{data.year}</td>
         <td>{data.time}</td>
         <td>{data.lang}</td>
-        <td>{data.rel}</td>
+        <td>{moment.utc(data.rel).format('DD-MM-YYYY')}</td>
         <td>{data.rel_country}</td>
         <td>
           <button

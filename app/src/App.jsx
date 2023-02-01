@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import NavBar from "./components/NavBar";
 import Tables from './components/Tables';
 import Footer from "./components/Footer";
+import AddMovie from "./components/AddMovie";
 
 
 
@@ -17,7 +18,7 @@ function App() {
         const {data} = await movies.get("/movies");
         setMoviesList(data);
       } 
-  fetchData(); },[]); 
+  fetchData(); }, []); 
 
   const addMovie = async (item) => {
     const { data } = await movies.post("/movies", item);

@@ -5,7 +5,7 @@ const VideoSchema = new mongoose.Schema({
     year: Number,
     time: Number,
     lang: String,
-    rel: String,
+    rel: Date,
     rel_country: String
 });
 

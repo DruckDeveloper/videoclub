@@ -9,7 +9,7 @@ const AddMovie = ({add}) => {
   const [time, setTime] = useState(0);
   const [lang, setLang] = useState('');
   const [rel, setRel] = useState('');
-  const [rel_county, setRel_county] = useState('');
+  const [rel_country, setRel_country] = useState('');
 
 
 const addItem ={
@@ -18,7 +18,7 @@ const addItem ={
     time: time,
     lang: lang,
     rel: rel,
-    rel_county: rel_county};
+    rel_country: rel_country};
 
     
   return (
@@ -64,8 +64,8 @@ const addItem ={
         </Form.Group>
         <Form.Group className="mb-2">
           <Form.Control type="text" placeholder="País"
-          onChange={(e) => {setRel_county(e.target.value)}}
-          value={rel_county} />
+          onChange={(e) => {setRel_country(e.target.value)}}
+          value={rel_country} />
         </Form.Group>
       </Form>
 

@@ -1,10 +1,10 @@
 <h1 align="center">Movies CRUD</h1> 
 
+The VideoClub - Movie extra ordinario is a web page that allows you to view, create, modify and delete information referring to the movies saved by the client. The full stack MERN application was used (MongoDB, Express, React and Node)
+
 ![image](https://user-images.githubusercontent.com/92132152/216208777-ff3fb8b9-e398-481c-9b33-a099c8fbc6a9.png)
 ![image](https://user-images.githubusercontent.com/92132152/216208846-e271f3f5-2ac3-48cb-ac18-d1bc8ecaa17a.png)
 ![image](https://user-images.githubusercontent.com/92132152/216208886-e664a0bd-1766-4611-ad7d-8cacb4ba0401.png)
-
-The VideoClub - Movie extra ordinario is a web page that allows you to view, create, modify and delete information referring to the movies saved by the client. The full stack MERN application was used (MongoDB, Express, React and Node)
 
 ## Functionalities: 
 * Create movies

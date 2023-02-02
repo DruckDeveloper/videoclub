@@ -3,5 +3,5 @@ import axios from "axios";
 
 // Backend endpoint 
 export default axios.create({
-    baseURL: "http://localhost:3030"
+    baseURL: process.env.BACKEND_ENDPOINT || "https://videoclub-five.vercel.app/"
 });
